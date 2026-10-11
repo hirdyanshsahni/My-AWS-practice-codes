@@ -1,0 +1,1451 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover authentic Indian flavours at The Saffron Table. Explore our menu and reserve your table.">
+<title>The Saffron Table — Indian Dining</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --cream: #f7f5ef;
+    --paper: #fffdf8;
+    --green: #273e32;
+    --green-light: #3c5947;
+    --orange: #b96543;
+    --ink: #242822;
+    --muted: #777a70;
+    --line: #e5e2d8;
+    --serif: "Playfair Display", Georgia, serif;
+    --sans: "DM Sans", Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--sans);
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(1160px, 88%);
+    margin: auto;
+}
+
+.eyebrow {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    color: var(--orange);
+    font-weight: 700;
+}
+
+h1, h2, h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    letter-spacing: -1.2px;
+}
+
+.section-heading {
+    max-width: 620px;
+    margin-bottom: 40px;
+}
+
+.section-heading p {
+    color: var(--muted);
+    margin-top: 13px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 13px 22px;
+    border: 1px solid var(--green);
+    background: var(--green);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .2s, color .2s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--green-light);
+}
+
+.btn-light {
+    background: transparent;
+    color: var(--green);
+}
+
+.btn-light:hover {
+    background: var(--green);
+    color: white;
+}
+
+.btn-arrow {
+    font-size: 17px;
+}
+
+/* Header */
+
+.header {
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.brand {
+    font-family: var(--serif);
+    font-size: 23px;
+    line-height: 1.1;
+    white-space: nowrap;
+}
+
+.brand span {
+    display: block;
+    font-family: var(--sans);
+    color: var(--orange);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 6px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    font-size: 12px;
+    font-weight: 600;
+    color: #55594f;
+    transition: color .2s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-actions .btn {
+    padding: 11px 17px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--line);
+    padding: 8px 11px;
+    cursor: pointer;
+    color: var(--green);
+}
+
+/* Hero */
+
+.hero {
+    padding: 35px 0 65px;
+}
+
+.hero-panel {
+    min-height: 535px;
+    position: relative;
+    overflow: hidden;
+    background: var(--green);
+    display: flex;
+    align-items: center;
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0 0 0 34%;
+    width: 66%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-panel::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        #273e32 0%,
+        rgba(39, 62, 50, .98) 28%,
+        rgba(39, 62, 50, .77) 48%,
+        rgba(39, 62, 50, .08) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    width: 56%;
+    padding: 65px 0 65px 7%;
+}
+
+.hero-content .eyebrow {
+    color: #e8b69b;
+}
+
+.hero h1 {
+    font-size: clamp(43px, 6vw, 72px);
+    letter-spacing: -2px;
+    margin: 18px 0;
+    max-width: 550px;
+}
+
+.hero h1 em {
+    font-weight: 400;
+    color: #e8b69b;
+}
+
+.hero-content > p {
+    color: #e0e3db;
+    max-width: 390px;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.btn-cream {
+    background: var(--cream);
+    color: var(--green);
+    border-color: var(--cream);
+}
+
+.btn-cream:hover {
+    background: white;
+}
+
+.hero .btn-light {
+    border-color: rgba(255,255,255,.55);
+    color: white;
+}
+
+.hero .btn-light:hover {
+    background: white;
+    color: var(--green);
+}
+
+.hero-note {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    margin-top: 43px;
+    color: #e0e3db;
+    font-size: 11px;
+    letter-spacing: .4px;
+}
+
+.hero-note strong {
+    color: white;
+    font-size: 13px;
+}
+
+/* Small intro strip */
+
+.intro-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 25px 0 35px;
+    border-bottom: 1px solid var(--line);
+    flex-wrap: wrap;
+}
+
+.intro-strip p {
+    font-family: var(--serif);
+    font-size: 20px;
+}
+
+.intro-strip span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+/* Story */
+
+.story {
+    padding: 100px 0;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 85px;
+}
+
+.story-visual {
+    position: relative;
+    padding: 0 30px 30px 0;
+}
+
+.story-visual img {
+    height: 460px;
+}
+
+.story-visual::after {
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 55%;
+    right: 0;
+    bottom: 0;
+    border-right: 1px solid var(--orange);
+    border-bottom: 1px solid var(--orange);
+    z-index: -1;
+}
+
+.story-copy h2 {
+    margin: 14px 0 20px;
+}
+
+.story-copy p {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 15px;
+}
+
+.story-copy .btn {
+    margin-top: 12px;
+}
+
+.story-caption {
+    position: absolute;
+    bottom: 48px;
+    left: 20px;
+    background: var(--paper);
+    padding: 13px 19px;
+    font-family: var(--serif);
+    font-size: 14px;
+}
+
+/* Menu */
+
+.menu-section {
+    background: #eeece3;
+    padding: 85px 0 95px;
+}
+
+.menu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.menu-top .section-heading {
+    margin-bottom: 0;
+}
+
+.menu-tabs {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.menu-tab {
+    border: 1px solid #d5d3c9;
+    background: transparent;
+    color: #5f635a;
+    padding: 9px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: .2s;
+}
+
+.menu-tab.active,
+.menu-tab:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+.dish-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.dish-card {
+    background: var(--paper);
+    min-width: 0;
+}
+
+.dish-card[hidden] {
+    display: none;
+}
+
+.dish-photo {
+    position: relative;
+    overflow: hidden;
+}
+
+.dish-photo img {
+    height: 245px;
+    transition: transform .4s;
+}
+
+.dish-card:hover .dish-photo img {
+    transform: scale(1.035);
+}
+
+.dish-tag {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--paper);
+    color: var(--green);
+    padding: 6px 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.dish-info {
+    padding: 21px 21px 23px;
+}
+
+.dish-name {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.dish-name h3 {
+    font-size: 20px;
+}
+
+.dish-price {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+.dish-info p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+    margin-top: 10px;
+    min-height: 44px;
+}
+
+.menu-bottom {
+    text-align: center;
+    margin-top: 35px;
+}
+
+/* Quote banner */
+
+.quote-banner {
+    background: var(--green);
+    color: white;
+    padding: 75px 20px;
+    text-align: center;
+}
+
+.quote-banner .eyebrow {
+    color: #e8b69b;
+}
+
+.quote-banner blockquote {
+    font-family: var(--serif);
+    font-size: clamp(25px, 4vw, 41px);
+    line-height: 1.4;
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.quote-banner p {
+    color: #d2d8ce;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Reservations */
+
+.reservation {
+    padding: 100px 0;
+}
+
+.reservation-grid {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 75px;
+    align-items: start;
+}
+
+.reservation-copy h2 {
+    margin: 14px 0 20px;
+}
+
+.reservation-copy > p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.detail-row {
+    padding: 17px 0;
+    border-top: 1px solid var(--line);
+    display: flex;
+    gap: 15px;
+    align-items: start;
+}
+
+.detail-icon {
+    color: var(--orange);
+    font-size: 19px;
+}
+
+.detail-row strong {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.detail-row span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.reservation-form {
+    background: var(--paper);
+    padding: 35px;
+    border: 1px solid var(--line);
+}
+
+.reservation-form h3 {
+    font-size: 26px;
+    margin-bottom: 7px;
+}
+
+.form-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field.full {
+    grid-column: 1 / -1;
+}
+
+.field label {
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 12px;
+    background: #fbfaf6;
+    border: 1px solid #deddd4;
+    border-radius: 0;
+    outline: none;
+    color: var(--ink);
+    font-size: 12px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--green);
+}
+
+.field textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.form-submit {
+    width: 100%;
+    margin-top: 22px;
+}
+
+.form-message {
+    display: none;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--green);
+}
+
+/* Footer */
+
+footer {
+    background: #202b23;
+    color: #f6f3e9;
+    padding: 60px 0 25px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-brand {
+    font-family: var(--serif);
+    font-size: 27px;
+}
+
+.footer-brand span {
+    display: block;
+    font-family: var(--sans);
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #e8b69b;
+    margin-top: 5px;
+}
+
+.footer-about p {
+    color: #c5ccc3;
+    font-size: 12px;
+    margin-top: 15px;
+    max-width: 260px;
+}
+
+.footer-column h3 {
+    font-family: var(--sans);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.footer-column a,
+.footer-column p {
+    display: block;
+    color: #c5ccc3;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.footer-column a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #465147;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: #b9c0b7;
+    font-size: 10px;
+}
+
+/* Responsive */
+
+@media (max-width: 950px) {
+    .nav-links {
+        gap: 16px;
+    }
+
+    .nav-actions .btn {
+        padding: 10px 12px;
+    }
+
+    .hero-content {
+        width: 68%;
+    }
+
+    .story-grid {
+        gap: 45px;
+    }
+
+    .menu-top {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .reservation-grid {
+        gap: 35px;
+    }
+
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+    }
+
+    .navbar {
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 12px 0;
+    }
+
+    .brand {
+        font-size: 21px;
+    }
+
+    .menu-toggle {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav-actions .btn {
+        display: none;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 5px 0 10px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 11px 0;
+        border-top: 1px solid var(--line);
+    }
+
+    .hero {
+        padding: 20px 0 35px;
+    }
+
+    .hero-panel {
+        min-height: 540px;
+        align-items: end;
+    }
+
+    .hero-image {
+        inset: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-panel::after {
+        background: linear-gradient(
+            0deg,
+            rgba(26, 46, 35, .98) 0%,
+            rgba(26, 46, 35, .78) 43%,
+            rgba(26, 46, 35, .08) 100%
+        );
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 50px 7%;
+    }
+
+    .hero h1 {
+        font-size: clamp(43px, 12vw, 62px);
+    }
+
+    .hero-note {
+        margin-top: 28px;
+    }
+
+    .intro-strip {
+        padding: 20px 0;
+    }
+
+    .intro-strip p {
+        font-size: 17px;
+    }
+
+    .story {
+        padding: 65px 0;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-visual img {
+        height: 330px;
+    }
+
+    .menu-section {
+        padding: 65px 0;
+    }
+
+    .dish-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .dish-photo img {
+        height: 260px;
+    }
+
+    .dish-info p {
+        min-height: 0;
+    }
+
+    .quote-banner {
+        padding: 60px 7%;
+    }
+
+    .reservation {
+        padding: 65px 0;
+    }
+
+    .reservation-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .reservation-form {
+        padding: 24px 18px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="container navbar">
+
+        <a href="#home" class="brand">
+            The Saffron Table
+            <span>Indian Kitchen & Dining</span>
+        </a>
+
+        <button
+            class="menu-toggle"
+            id="menuToggle"
+            aria-expanded="false"
+            aria-controls="navLinks"
+            aria-label="Open navigation"
+        >☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#story">Our Story</a>
+            <a href="#menu">The Menu</a>
+            <a href="#visit">Find Us</a>
+        </nav>
+
+        <div class="nav-actions">
+            <a href="#reserve" class="btn">Reserve a Table <span class="btn-arrow">↗</span></a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-panel">
+
+                <img
+                    class="hero-image"
+                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1500&q=85"
+                    alt="Warmly lit restaurant dining room"
+                    fetchpriority="high"
+                >
+
+                <div class="hero-content">
+                    <div class="eyebrow">A little taste of India</div>
+
+                    <h1>Tradition on<br>every <em>plate.</em></h1>
+
+                    <p>
+                        Honest ingredients, recipes passed down through
+                        generations, and a table always set for one more.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-cream">
+                            Explore the Menu <span class="btn-arrow">↗</span>
+                        </a>
+
+                        <a href="#story" class="btn btn-light">
+                            Our Story
+                        </a>
+                    </div>
+
+                    <div class="hero-note">
+                        <span>✳</span>
+                        <div>
+                            <strong>Made fresh, served with care.</strong><br>
+                            Every single day in our kitchen.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- INTRO -->
+    <div class="container intro-strip">
+        <p>Good food brings people closer.</p>
+        <span>FRESHLY PREPARED · LOCALLY INSPIRED · ALWAYS WELCOMING</span>
+    </div>
+
+    <!-- STORY -->
+    <section class="story" id="story">
+        <div class="container story-grid">
+
+            <div class="story-visual">
+                <img
+                    src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=1000&q=85"
+                    alt="A colourful Indian meal served at the table"
+                    loading="lazy"
+                >
+                <div class="story-caption">A kitchen with a story to tell.</div>
+            </div>
+
+            <div class="story-copy">
+                <div class="eyebrow">A note from our kitchen</div>
+
+                <h2>Rooted in tradition.<br>Made for today.</h2>
+
+                <p>
+                    Some of our favourite memories begin around a dining
+                    table. A dish passed from one generation to the next.
+                    The familiar aroma of spices warming in a pan.
+                    Someone asking for just one more serving.
+                </p>
+
+                <p>
+                    That's the feeling we hope to bring to The Saffron
+                    Table. Our approach is simple: respect the ingredients,
+                    take the time to get the flavours right, and make
+                    everyone feel at home.
+                </p>
+
+                <a href="#visit" class="btn btn-light">
+                    Come Meet Us <span class="btn-arrow">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MENU -->
+    <section class="menu-section" id="menu">
+        <div class="container">
+
+            <div class="menu-top">
+                <div class="section-heading">
+                    <div class="eyebrow">From our kitchen</div>
+                    <h2>Things worth<br>coming back for.</h2>
+                    <p>
+                        Familiar favourites and comforting classics,
+                        made fresh and served straight from the kitchen.
+                    </p>
+                </div>
+
+                <div class="menu-tabs" aria-label="Filter menu">
+                    <button class="menu-tab active" data-filter="all">All dishes</button>
+                    <button class="menu-tab" data-filter="main">Mains</button>
+                    <button class="menu-tab" data-filter="vegetarian">Vegetarian</button>
+                    <button class="menu-tab" data-filter="dessert">Desserts</button>
+                </div>
+            </div>
+
+            <div class="dish-grid">
+
+                <article class="dish-card" data-category="main">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=85"
+                            alt="Butter chicken in a rich curry sauce"
+                            loading="lazy"
+                        >
+                        <span class="dish-tag">House favourite</span>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Butter Chicken</h3>
+                            <span class="dish-price">₹280</span>
+                        </div>
+                        <p>Tender chicken in a silky tomato gravy, finished with cream and a touch of kasuri methi.</p>
+                    </div>
+                </article>
+
+                <article class="dish-card" data-category="vegetarian">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=800&q=85"
+                            alt="Paneer curry with Indian spices"
+                            loading="lazy"
+                        >
+                        <span class="dish-tag">Vegetarian</span>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Paneer Tikka Masala</h3>
+                            <span class="dish-price">₹240</span>
+                        </div>
+                        <p>Golden paneer, a gently smoky flavour and a warmly spiced onion-tomato gravy.</p>
+                    </div>
+                </article>
+
+                <article class="dish-card" data-category="main">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1563379091339-03246963d96c?auto=format&fit=crop&w=800&q=85"
+                            alt="Basmati rice biryani"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Chicken Biryani</h3>
+                            <span class="dish-price">₹300</span>
+                        </div>
+                        <p>Long-grain basmati, fragrant spices and slow-cooked chicken, served with cooling raita.</p>
+                    </div>
+                </article>
+
+                <article class="dish-card" data-category="vegetarian">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1626500155537-93690c24099e?auto=format&fit=crop&w=800&q=85"
+                            alt="Indian flatbread and curry"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Dal Makhani</h3>
+                            <span class="dish-price">₹190</span>
+                        </div>
+                        <p>Black lentils simmered until rich and comforting, with butter and a hint of cream.</p>
+                    </div>
+                </article>
+
+                <article class="dish-card" data-category="vegetarian">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=800&q=85"
+                            alt="Freshly prepared naan bread"
+                            loading="lazy"
+                        >
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Garlic Naan</h3>
+                            <span class="dish-price">₹80</span>
+                        </div>
+                        <p>Soft, freshly baked bread brushed with butter, garlic and a little fresh coriander.</p>
+                    </div>
+                </article>
+
+                <article class="dish-card" data-category="dessert">
+                    <div class="dish-photo">
+                        <img
+                            src="https://images.unsplash.com/photo-1666190092159-1e6f0b6c0d7d?auto=format&fit=crop&w=800&q=85"
+                            alt="Indian dessert served after a meal"
+                            loading="lazy"
+                        >
+                        <span class="dish-tag">Something sweet</span>
+                    </div>
+                    <div class="dish-info">
+                        <div class="dish-name">
+                            <h3>Gulab Jamun</h3>
+                            <span class="dish-price">₹100</span>
+                        </div>
+                        <p>Soft milk dumplings soaked in fragrant syrup. A sweet little end to your meal.</p>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="menu-bottom">
+                <p style="color:var(--muted);font-size:12px;margin-bottom:16px;">
+                    Our menu changes with the season. Ask our team about today's specials.
+                </p>
+                <a href="#reserve" class="btn">
+                    Join Us for a Meal <span class="btn-arrow">↗</span>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- QUOTE -->
+    <section class="quote-banner">
+        <div class="eyebrow">The Saffron Table philosophy</div>
+        <blockquote>
+            “The best meals aren't just about what's on the plate.
+            They're about who's around the table.”
+        </blockquote>
+        <p>Come hungry. Leave happy.</p>
+    </section>
+
+    <!-- RESERVATIONS -->
+    <section class="reservation" id="reserve">
+        <div class="container reservation-grid">
+
+            <div class="reservation-copy" id="visit">
+                <div class="eyebrow">Your table is waiting</div>
+                <h2>Let's make a<br>little time for dinner.</h2>
+
+                <p>
+                    Planning a family dinner, catching up with friends,
+                    or simply craving something good? Send us your preferred
+                    date and time to enquire about a table.
+                </p>
+
+                <div class="detail-row">
+                    <div class="detail-icon">⌖</div>
+                    <div>
+                        <strong>Find the restaurant</strong>
+                        <span>123 Food Street, New Delhi, India</span>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-icon">◷</div>
+                    <div>
+                        <strong>When we're open</strong>
+                        <span>Daily, 12 noon – 10:30 pm</span>
+                    </div>
+                </div>
+
+                <div class="detail-row">
+                    <div class="detail-icon">☎</div>
+                    <div>
+                        <strong>Give us a call</strong>
+                        <span>+91 98765 43210</span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="reservation-form" id="reservationForm">
+                <h3>Reserve a table</h3>
+                <p class="form-subtitle">
+                    Share your details and preferred time.
+                </p>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="guestName">Your name</label>
+                        <input type="text" id="guestName" name="name"
+                               placeholder="Full name" autocomplete="name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="guestEmail">Email address</label>
+                        <input type="email" id="guestEmail" name="email"
+                               placeholder="you@example.com" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="bookingDate">Preferred date</label>
+                        <input type="date" id="bookingDate" name="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="bookingTime">Preferred time</label>
+                        <select id="bookingTime" name="time" required>
+                            <option value="">Choose a time</option>
+                            <option>12:00 PM</option>
+                            <option>1:00 PM</option>
+                            <option>2:00 PM</option>
+                            <option>6:00 PM</option>
+                            <option>7:00 PM</option>
+                            <option>8:00 PM</option>
+                            <option>9:00 PM</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="guestCount">Number of guests</label>
+                        <select id="guestCount" name="guests" required>
+                            <option value="">Select party size</option>
+                            <option value="1">1 guest</option>
+                            <option value="2">2 guests</option>
+                            <option value="3">3 guests</option>
+                            <option value="4">4 guests</option>
+                            <option value="5">5 guests</option>
+                            <option value="6">6 guests</option>
+                            <option value="7+">7 or more guests</option>
+                        </select>
+                    </div>
+
+                    <div class="field full">
+                        <label for="bookingNote">Anything we should know? (Optional)</label>
+                        <textarea id="bookingNote" name="note"
+                                  placeholder="Special occasion, seating preference, etc."></textarea>
+                    </div>
+
+                </div>
+
+                <button class="btn form-submit" type="submit">
+                    Send Reservation Enquiry ↗
+                </button>
+
+                <p class="form-message" id="formMessage" role="status">
+                    Your details have been checked. Please contact the restaurant directly to confirm your booking.
+                </p>
+            </form>
+
+        </div>
+    </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+                <a href="#home" class="footer-brand">
+                    The Saffron Table
+                    <span>Indian Kitchen & Dining</span>
+                </a>
+                <p>
+                    Good ingredients, generous hospitality, and a little
+                    more time spent around the table.
+                </p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Explore</h3>
+                <a href="#home">Home</a>
+                <a href="#story">Our Story</a>
+                <a href="#menu">Our Menu</a>
+                <a href="#reserve">Reservations</a>
+            </div>
+
+            <div class="footer-column">
+                <h3>Opening Hours</h3>
+                <p>Monday – Sunday</p>
+                <p>12:00 PM – 10:30 PM</p>
+                <p>Kitchen closes at 10 PM</p>
+            </div>
+
+            <div class="footer-column">
+                <h3>Say Hello</h3>
+                <p>123 Food Street</p>
+                <p>New Delhi, India</p>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+                <a href="mailto:hello@example.com">Send us an email</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 The Saffron Table. All rights reserved.</span>
+            <span>Made with care, served with love.</span>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", function () {
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuToggle.setAttribute("aria-expanded", isOpen);
+        menuToggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
+
+        menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    // Close mobile navigation after selecting a section
+    navLinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navLinks.classList.remove("open");
+            menuToggle.setAttribute("aria-expanded", "false");
+            menuToggle.setAttribute("aria-label", "Open navigation");
+            menuToggle.textContent = "☰";
+        });
+    });
+
+    // Menu category filters
+    const filterButtons = document.querySelectorAll(".menu-tab");
+    const dishes = document.querySelectorAll(".dish-card");
+
+    filterButtons.forEach(function (button) {
+        button.addEventListener("click", function () {
+            const selectedCategory = button.dataset.filter;
+
+            filterButtons.forEach(function (item) {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+            dishes.forEach(function (dish) {
+                const matches =
+                    selectedCategory === "all" ||
+                    dish.dataset.category === selectedCategory;
+
+                dish.hidden = !matches;
+            });
+        });
+    });
+
+    // Set the earliest selectable date to today
+    const dateInput = document.getElementById("bookingDate");
+    const today = new Date();
+    const localToday = [
+        today.getFullYear(),
+        String(today.getMonth() + 1).padStart(2, "0"),
+        String(today.getDate()).padStart(2, "0")
+    ].join("-");
+
+    dateInput.min = localToday;
+
+    // Front-end enquiry form demonstration
+    const reservationForm = document.getElementById("reservationForm");
+    const formMessage = document.getElementById("formMessage");
+
+    reservationForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        if (!reservationForm.reportValidity()) {
+            return;
+        }
+
+        formMessage.style.display = "block";
+        formMessage.textContent =
+            "Form completed successfully on this page. This demo does not send your enquiry to the restaurant. Please call to confirm your booking.";
+    });
+</script>
+
+</body>
+</html>
